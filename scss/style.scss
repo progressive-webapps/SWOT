@@ -1,0 +1,213 @@
+// FONT DECLARATION ==================================================================================
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900');
+@import url('https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900');
+
+
+
+
+// VARIABLES =========================================================================================
+
+$mavenPro: 'Maven Pro', sans-serif;
+$roboto: 'Roboto', sans-serif;
+
+
+
+// MIXINS ============================================================================================
+
+@mixin flexLayout() 
+{
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex; 
+}
+
+@mixin justifyContent($justifyType)
+{
+    justify-content: $justifyType;
+    -webkit-justify-content: $justifyType;
+}
+
+@mixin alignItems($alignType)
+{
+    -webkit-align-items: $alignType;
+    align-items: $alignType;
+}
+
+@mixin alignSelf($alignType)
+{
+    -webkit-align-self: $alignType;
+    align-self: $alignType;
+}
+
+@mixin flexDirection($direction)
+{
+    -webkit-flex-direction: $direction;
+    flex-direction: $direction;
+}
+
+@mixin flexWrap($wrap)
+{
+    -webkit-flex-wrap: $wrap;
+    flex-wrap: $wrap;
+}
+
+@mixin noSelect
+{
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;  
+    -khtml-user-select: none;   
+    -moz-user-select: none;     
+    -ms-user-select: none;   
+    user-select: none;
+}
+
+
+// STYLES ============================================================================================
+
+
+html, body
+{
+    margin: 0px;
+    font-family: sans-serif;
+    box-sizing: border-box;
+    font-family: 'Comfortaa', sans-serif;
+}
+
+.header-container 
+{
+    @include flexLayout;
+    @include alignItems(center);
+    background: #212730;
+    color: white;
+    height: 128px;
+    padding: 0 24px;
+    position: relative;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 3px 1px -2px rgba(0, 0, 0, 0.18), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+
+    @media (max-width: 480px)
+    {
+        height: 80px;
+        padding: 0 16px;
+    }
+
+    h1 
+    {
+        font-weight: 400;
+        letter-spacing: 0.1em;
+        font-size: 2.5em;
+        font-family: $mavenPro;
+
+        @media (max-width:480px)
+        {
+            letter-spacing: auto;
+            font-size: 1.4em;
+        }
+    }
+}
+
+h2
+{
+    padding: 0;
+    width: 100%;
+    font-weight: 300;
+    box-sizing: border-box;
+    margin: 0;
+    font-family: $mavenPro;
+
+    @media (max-width: 480px)
+    {
+        font-weight: 500;
+        font-size: 1em;
+    }
+}
+
+.grid-container 
+{
+    @include flexLayout;
+    @include flexDirection(row);
+    @include flexWrap(wrap);
+
+    .grid-item
+    {
+        width: 50%;
+        min-height: 320px;
+        box-sizing: border-box;
+        -webkit-transition: box-shadow .6s ease;
+        -moz-transition: box-shadow .6s ease;
+        -o-transition: box-shadow .6s ease;
+        transition: box-shadow .6s ease;
+
+        @media (max-width: 480px)
+        {
+            min-height: 256px;
+        }
+
+        .card
+        {
+            width: 100%;
+            min-height: 360px;
+            box-sizing: border-box;
+            padding: 24px;
+
+            @media (max-width: 480px)
+            {
+                min-height: 256px;
+                padding: 16px;
+            }
+        }
+    }
+
+    .grid-item:hover, .grid-item:focus
+    {
+        -webkit-box-shadow: 0px 4px 43px 0px rgba(0,0,0,0.25);
+        -moz-box-shadow: 0px 4px 43px 0px rgba(0,0,0,0.25);
+        box-shadow: 0px 4px 43px 0px rgba(0,0,0,0.25);
+        z-index: 1;
+    }
+
+}
+
+.strengths 
+{
+    background: #F8F8E8;
+    color: #333C4A;
+    font-weight: 900;
+}
+
+.weaknesses
+{
+    background: #fafae5;
+    color: #333C4A;
+}
+
+.opportunities
+{
+    background: #404e5b;
+    color: #F8FCEB;
+}
+
+.threats
+{
+    background: #333C4A;
+    color: #F8FCEB;
+}
+
+.footer-container
+{
+    @include flexLayout;
+    @include alignItems(center);
+    min-height: 96px;
+    background: #212730;
+    color: #fafae5;
+    font-family: $roboto;
+    padding: 0 24px;
+    font-size: 0.9em;
+
+    span
+    {
+        margin-right: 12px;
+    }
+}
