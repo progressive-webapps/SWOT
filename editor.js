@@ -1,7 +1,9 @@
 (function(){
-    var editors = 'strengths weaknesses opportunities threats'
-    .split(' ')
-    .map(type => {
-        new MediumEditor(`.${type}`);
-    });
+    var editors = new MediumEditor('.swot-editor',
+        {
+            placeholder: {
+                text: 'Start typing',
+                hideOnClick: false
+            }
+        });
 }())
