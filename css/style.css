@@ -4,7 +4,7 @@ html, body {
   margin: 0px;
   font-family: sans-serif;
   box-sizing: border-box;
-  font-family: 'Comfortaa', sans-serif; }
+  font-family: 'Roboto', sans-serif; }
 
 .header-container {
   display: -webkit-box;
@@ -57,6 +57,11 @@ h2 {
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap; }
   .grid-container .grid-item {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
     width: 50%;
     min-height: 320px;
     box-sizing: border-box;
@@ -76,6 +81,15 @@ h2 {
         .grid-container .grid-item .card {
           min-height: 256px;
           padding: 16px; } }
+      .grid-container .grid-item .card .swot-editor {
+        margin-top: 24px;
+        min-height: 300px; }
+        @media (max-width: 480px) {
+          .grid-container .grid-item .card .swot-editor {
+            min-height: 172px;
+            padding: 16px; } }
+      .grid-container .grid-item .card .swot-editor:focus {
+        outline: none; }
   .grid-container .grid-item:hover, .grid-container .grid-item:focus {
     -webkit-box-shadow: 0px 4px 43px 0px rgba(0, 0, 0, 0.25);
     -moz-box-shadow: 0px 4px 43px 0px rgba(0, 0, 0, 0.25);
@@ -84,8 +98,7 @@ h2 {
 
 .strengths {
   background: #F8F8E8;
-  color: #333C4A;
-  font-weight: 900; }
+  color: #333C4A; }
 
 .weaknesses {
   background: #fafae5;
@@ -115,5 +128,9 @@ h2 {
   font-size: 0.9em; }
   .footer-container span {
     margin-right: 12px; }
+    .footer-container span a {
+      font-weight: 600;
+      color: white;
+      text-decoration: none; }
 
 /*# sourceMappingURL=style.css.map */
